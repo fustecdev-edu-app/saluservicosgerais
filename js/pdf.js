@@ -160,10 +160,11 @@ function finalizarOrcamento() {
   
   window.print();
   // Remove o orçamento salvo no navegador
-   // localStorage.removeItem('orcamentoFinal');
+    localStorage.removeItem('orcamentoFinal');
   window.location.href="index.html"
  
 }
+
 
 
 
