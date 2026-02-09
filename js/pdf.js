@@ -158,4 +158,7 @@ mostrarResumoMateriais()
 carregarPreview()
 function finalizarOrcamento() {
   window.print();
+  // Remove o orçamento salvo no navegador
+    localStorage.removeItem('orcamentoFinal');
 }
+
