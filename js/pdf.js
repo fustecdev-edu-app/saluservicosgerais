@@ -157,10 +157,11 @@ mostrarResumoMateriais()
 
 carregarPreview()
 function finalizarOrcamento() { 
-  // Remove o orçamento salvo no navegador
-    localStorage.removeItem('orcamentoFinal');
-  window.location.href="index.html"
+  
   window.print();
+  // Remove o orçamento salvo no navegador
+   // localStorage.removeItem('orcamentoFinal');
+  window.location.href="index.html"
  
 }
 
