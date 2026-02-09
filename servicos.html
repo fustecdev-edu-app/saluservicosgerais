@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- Define o tipo de documento como HTML5 -->
+<html lang="pt-BR">
+<!-- Define o idioma da página como português do Brasil -->
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Garante que acentos e caracteres especiais funcionem corretamente -->
+
+  <title>Serviços - Orçamento de Obra</title>
+  <!-- Título que aparece na aba do navegador -->
+
+  <link rel="stylesheet" href="css/servicos.css">
+  <!-- Importa o CSS responsável pelo layout dessa página -->
+</head>
+
+<body>
+
+<!-- ===============================
+     CABEÇALHO DO SITE
+================================ -->
+<header>
+  <div class="logo">
+    <!-- Identidade visual do site -->
+    <h1>Obra Planejada</h1>
+  </div>
+
+  <!-- Menu de navegação principal -->
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="servicos.html">Serviços</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ===============================
+     CONTEÚDO PRINCIPAL
+================================ -->
+<main>
+
+  <!-- Seção principal da página -->
+  <section class="hero">
+
+    <!-- Título explicativo -->
+    <h2>Escolha o serviço para gerar seu orçamento</h2>
+
+    <!-- Texto de orientação ao usuário -->
+    <p>
+      Selecione abaixo o tipo de serviço que você deseja calcular.
+    </p>
+
+    <!-- ===============================
+         GRID DE SERVIÇOS
+    ================================= -->
+    <div class="servicos-opcoes">
+
+      <!-- Cada <a> funciona como um CARD clicável -->
+      <!-- Ele leva o usuário para a página específica do serviço -->
+
+      <a href="sapatas.html" class="servico-card">
+        <h3>Sapatas</h3>
+        <p>cimento, areia, brita, valor de execução.</p>   <!-- feito --->
+      </a>
+
+      <a href="alvenariadobrada.html" class="servico-card">
+        <h3>Alvenaria Dobrada</h3>
+        <p>Blocos, argamassa e valor de execução.</p> <!-- feito--->
+      </a>
+
+      <a href="vigasbaldrame.html" class="servico-card">
+        <h3>Vigas Baldrame</h3>
+        <p>cimento, areia, brita, valor de execução.</p> <!----->
+      </a>
+
+      <a href="alvenariasingela.html" class="servico-card">
+        <h3>Alvenaria Singela</h3>
+        <p>Blocos, argamassa e valor de execução.</p> <!----->
+      </a>
+
+      <a href="pilares.html" class="servico-card">
+        <h3>Pilares</h3>
+        <p>cimento, areia, brita, valor de execução.</p> <!----->
+      </a>
+
+      <a href="cinta.html" class="servico-card">
+        <h3>Cintas</h3>
+        <p>cimento, areia, brita, valor de execução.</p> <!----->
+      </a>
+
+      <a href="laje.html" class="servico-card">
+        <h3>Laje</h3>
+        <p>cimento, areia, brita, malha, valor de execução.</p> <!----->
+      </a>
+
+      <a href="chapisco.html" class="servico-card">
+        <h3>Chapisco</h3>
+        <p>Cimento, areia e valor de execução.</p>  <!----->
+      </a>
+
+      <a href="reboco.html" class="servico-card">
+        <h3>Reboco</h3>
+        <p>Quantidade de cimento, areia e custo estimado.</p> <!----->
+      </a>
+
+      <a href="contrapiso.html" class="servico-card">
+        <h3>Contra-Piso</h3>
+        <p>cimento, areia, brita, valor de execução.</p> <!----->
+      </a>
+
+      <a href="piso.html" class="servico-card">
+        <h3>Piso</h3>
+        <p>cimento, areia, valor de execução.</p> <!----->
+      </a>
+
+      <a href="ceramica.html" class="servico-card">
+        <h3>Assentamento de Cerâmica</h3>
+        <p>Calcule cerâmica, argamassa, rejunte e mão de obra.</p> <!----->
+      </a>
+
+      <a href="pintura.html" class="servico-card">
+        <h3>Pintura</h3>
+        <p>Cálculo de tinta, rendimento e mão de obra.</p> <!----->
+      </a>
+
+    </div>
+
+    <br><br>
+
+    <!-- Botão para limpar o orçamento salvo -->
+    <button onclick="limpar()">Limpar</button>
+
+  </section>
+</main>
+
+<!-- ===============================
+     RODAPÉ
+================================ -->
+<footer>
+  <p>© 2026 - Obra Planejada</p>
+</footer>
+
+<!-- ===============================
+     SCRIPT LOCAL
+================================ -->
+<script>
+  function limpar() {
+    // Remove o orçamento salvo no navegador
+    localStorage.removeItem('orcamentoFinal');
+  }
+</script>
+
+</body>
+</html>

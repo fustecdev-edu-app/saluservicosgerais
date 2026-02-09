@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orçamento - Alvenaria Dobrada</title>
+
+  <!-- CSS específico para esta página -->
+  <link rel="stylesheet" href="css/alvenariasingela.css">
+  
+
+</head>
+<body>
+
+<!-- Título da página -->
+<h2>Alvenaria Singela</h2>
+
+<!-- Input para a área da alvenaria (em m²) -->
+<label>
+  Área (m²):
+  <input type="number" id="area" placeholder="Ex: 10">
+</label>
+<br><br>
+
+<!-- Input para o valor da mão de obra por m² -->
+<label>
+  Valor da mão de obra (R$/m²):
+  <input type="number" id="valorMaoObra" placeholder="Ex: 50">
+</label>
+<br><br>
+
+<!-- Botão para adicionar o serviço ao orçamento -->
+<button onclick="adicionarAlvenariaDobrada()">Adicionar ao orçamento</button>
+
+<hr>
+
+<!-- Div onde será mostrado o resultado da adição do serviço -->
+<div id="resultado"></div>
+
+<br>
+
+<!-- Botão para gerar o PDF do orçamento final -->
+<button onclick="finalizarOrcamento()">Finalizar orçamento (PDF)</button>
+<br><br>
+
+<!-- Botão para voltar à página de serviços, mantendo os dados salvos -->
+<button onclick="continuarOrcamento()">Continuar orçamento (outros serviços)</button>
+<br><br>
+
+<!-- Card resumindo o número de serviços adicionados -->
+<div class="card-orcamento" onclick="abrirModal()">
+  <div class="card-info">
+    <span class="titulo">Serviços adicionados</span>
+    <span id="contador" class="quantidade">0</span> <!-- Quantidade de serviços adicionados -->
+  </div>
+
+  <div class="card-icone" data-tooltip="Ver serviços">
+    👁️ <!-- Ícone olho para abrir modal -->
+  </div>
+</div>
+
+<!-- MODAL para exibir todos os serviços adicionados -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="fechar" onclick="fecharModal()">❌</span> <!-- Botão para fechar o modal -->
+    <h3>Serviços adicionados</h3>
+    <div id="listaServicos"></div> <!-- Aqui a lista de serviços será preenchida via JS -->
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="js/orcamento.js"></script> <!-- Funções globais: abrirModal, fecharModal, atualizarContador, continuarOrcamento -->
+<script src="js/alvenariasingela.js"></script> <!-- Funções específicas de Alvenaria Dobrada -->
+</body>
+</html>

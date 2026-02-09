@@ -1,0 +1,182 @@
+/* ===============================
+   ESTILOS GERAIS
+================================ */
+body {
+  font-family: Arial, sans-serif; /* Fonte padrão */
+  margin: 20px; /* Espaçamento interno da página */
+  background: #f4f4f4; /* Cor de fundo suave */
+}
+
+h2 {
+  color: #333; /* Cor do título */
+}
+
+/* ===============================
+   INPUTS E LABELS
+================================ */
+label {
+  display: block; /* Cada label em bloco */
+  margin-bottom: 10px; /* Espaço abaixo do label */
+  font-weight: bold; /* Deixa o texto do label em negrito */
+}
+
+input[type="number"] {
+  padding: 6px 10px; /* Espaçamento interno do input */
+  font-size: 14px; /* Tamanho da fonte */
+  border-radius: 6px; /* Bordas arredondadas */
+  border: 1px solid #ccc; /* Borda cinza clara */
+  width: 150px; /* Largura fixa */
+}
+
+/* ===============================
+   BOTÕES
+================================ */
+button {
+  background: #007bff; /* Azul padrão */
+  color: #fff; /* Texto branco */
+  border: none; /* Remove borda padrão */
+  padding: 8px 14px; /* Espaçamento interno */
+  border-radius: 6px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de mãozinha */
+  transition: background 0.2s ease; /* Transição suave ao passar o mouse */
+}
+
+button:hover {
+  background: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+
+/* ===============================
+   RESULTADO
+================================ */
+#resultado p {
+  background: #e6f2ff; /* Fundo azul claro */
+  padding: 8px 10px; /* Espaçamento interno */
+  border-radius: 6px; /* Bordas arredondadas */
+  margin-bottom: 6px; /* Espaço entre parágrafos */
+}
+
+/* ===============================
+   CARD ORÇAMENTO
+================================ */
+.card-orcamento {
+  display: flex; /* Layout em linha */
+  justify-content: space-between; /* Espaço entre título e ícone */
+  align-items: center; /* Centraliza verticalmente */
+  max-width: 320px; /* Largura máxima */
+  padding: 15px 20px; /* Espaçamento interno */
+  border-radius: 12px; /* Bordas arredondadas */
+  background: #fff; /* Fundo branco */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra leve */
+  cursor: pointer; /* Cursor de mãozinha */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transições suaves */
+  margin-top: 20px; /* Espaço acima do card */
+}
+
+.card-orcamento:hover {
+  transform: translateY(-2px); /* Leve elevação ao passar mouse */
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15); /* Sombra mais forte */
+}
+
+.card-info {
+  display: flex; /* Layout em coluna */
+  flex-direction: column; /* Vertical */
+}
+
+.card-info .titulo {
+  font-size: 14px; /* Tamanho menor do título */
+  color: #555; /* Cinza escuro */
+}
+
+.card-info .quantidade {
+  font-size: 22px; /* Maior para destaque */
+  font-weight: bold; /* Negrito */
+  color: #333; /* Cor escura */
+}
+
+/* ===============================
+   ÍCONE OLHO
+================================ */
+.card-icone {
+  font-size: 26px; /* Tamanho do ícone */
+  position: relative; /* Para posicionar tooltip */
+  animation: piscar 3s infinite; /* Animação de piscar */
+}
+
+/* ANIMAÇÃO DO OLHO */
+@keyframes piscar {
+  0%, 90%, 100% { opacity: 1; } /* Visível */
+  92%, 96% { opacity: 0.3; } /* Meio transparente para efeito de piscar */
+}
+
+/* ===============================
+   TOOLTIP
+================================ */
+.card-icone::after {
+  content: attr(data-tooltip); /* Texto do tooltip */
+  position: absolute;
+  bottom: 120%; /* Acima do ícone */
+  right: 50%; 
+  transform: translateX(50%); /* Centraliza horizontalmente */
+  background: #333; /* Fundo preto */
+  color: #fff; /* Texto branco */
+  padding: 6px 8px; /* Espaçamento interno */
+  font-size: 12px; /* Fonte pequena */
+  border-radius: 6px; /* Bordas arredondadas */
+  white-space: nowrap; /* Não quebrar linha */
+  opacity: 0; /* Inicialmente invisível */
+  pointer-events: none; /* Não interfere no mouse */
+  transition: opacity 0.2s ease; /* Transição suave */
+}
+
+.card-icone::before {
+  content: ""; /* Triângulo do tooltip */
+  position: absolute;
+  bottom: 110%;
+  right: 50%;
+  transform: translateX(50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent; /* Triângulo preto apontando para baixo */
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.card-icone:hover::after,
+.card-icone:hover::before {
+  opacity: 1; /* Mostra tooltip ao passar mouse */
+}
+
+/* ===============================
+   MODAL
+================================ */
+.modal {
+  display: none; /* Inicialmente escondido */
+  position: fixed; /* Fixa na tela */
+  z-index: 999; /* Fica acima de outros elementos */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ocupa toda largura */
+  height: 100%; /* Ocupa toda altura */
+  background: rgba(0,0,0,0.5); /* Fundo semi-transparente */
+}
+
+.modal-content {
+  background: #fff; /* Fundo branco */
+  margin: 5% auto; /* Centraliza verticalmente com margem superior */
+  padding: 20px; /* Espaçamento interno */
+  width: 90%; /* Largura máxima */
+  max-width: 500px; /* Limita tamanho do modal */
+  border-radius: 8px; /* Bordas arredondadas */
+  max-height: 70vh; /* Altura máxima */
+  overflow-y: auto; /* Scroll vertical se necessário */
+}
+
+.modal-content h3 {
+  margin-top: 0; /* Remove margem superior do título */
+}
+
+.fechar {
+  float: right; /* Posiciona no canto superior direito */
+  font-size: 24px; /* Tamanho do "X" */
+  cursor: pointer; /* Cursor de mãozinha */
+}

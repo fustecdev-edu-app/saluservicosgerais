@@ -1,0 +1,129 @@
+/* ceramica.css */
+
+/* CARD ORÇAMENTO */
+.card-orcamento {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 320px;
+  padding: 15px 20px;
+  border-radius: 12px;
+  background: #f8f9fa;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 10px;
+}
+
+.card-orcamento:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-info .titulo {
+  font-size: 14px;
+  color: #555;
+}
+
+.card-info .quantidade {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ÍCONE OLHO */
+.card-icone {
+  font-size: 26px;
+  position: relative;
+  animation: piscar 3s infinite;
+}
+
+/* ANIMAÇÃO DO OLHO */
+@keyframes piscar {
+  0%, 90%, 100% { opacity: 1; }
+  92%, 96% { opacity: 0.3; }
+}
+
+/* TOOLTIP */
+.card-icone::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 120%;
+  right: 50%;
+  transform: translateX(50%);
+  background: #333;
+  color: #fff;
+  padding: 6px 8px;
+  font-size: 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.card-icone::before {
+  content: "";
+  position: absolute;
+  bottom: 110%;
+  right: 50%;
+  transform: translateX(50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.card-icone:hover::after,
+.card-icone:hover::before {
+  opacity: 1;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 8px;
+  max-height: 70vh; /* deixa o modal rolável */
+  overflow-y: auto;  /* rolagem vertical */
+}
+
+.fechar {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+/* BOTÕES */
+button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #0056b3;
+}

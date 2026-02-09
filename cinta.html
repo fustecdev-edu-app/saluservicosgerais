@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orçamento - Cinta</title>
+
+  <!-- CSS específico do serviço -->
+  <link rel="stylesheet" href="css/cinta.css">
+
+
+</head>
+<body>
+
+<!-- TÍTULO -->
+<h2>Cinta</h2>
+
+<!-- INPUTS DO SERVIÇO -->
+
+<label>
+  Comprimento da cinta (m):
+  <input type="number" id="comprimento" placeholder="Ex: 12">
+</label>
+<br><br>
+
+<label>
+  Quantidade de lajes:
+  <input type="number" id="qtdLajes" min="1" placeholder="Ex: 1">
+</label>
+<br><br>
+
+<label>
+  Valor da mão de obra (R$/m³):
+  <input type="number" id="valorMaoObra" placeholder="Ex: 120">
+</label>
+<br><br>
+
+<!-- BOTÃO -->
+<button onclick="adicionarCinta()">Adicionar ao orçamento</button>
+
+<hr>
+
+<!-- RESULTADO -->
+<div id="resultado"></div>
+
+<br>
+
+<!-- FINALIZAR / CONTINUAR -->
+<button onclick="finalizarOrcamento()">Finalizar orçamento (PDF)</button>
+<br><br>
+<button onclick="continuarOrcamento()">Continuar orçamento (outros serviços)</button>
+
+<br><br>
+
+<!-- CARD ORÇAMENTO -->
+<div class="card-orcamento" onclick="abrirModal()">
+  <div class="card-info">
+    <span class="titulo">Serviços adicionados</span>
+    <span id="contador" class="quantidade">0</span>
+  </div>
+
+  <div class="card-icone" data-tooltip="Ver serviços">
+    👁️
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="fechar" onclick="fecharModal()">❌</span>
+    <h3>Serviços adicionados</h3>
+    <div id="listaServicos"></div>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="js/orcamento.js"></script>
+<script src="js/cinta.js"></script>
+
+</body>
+</html>

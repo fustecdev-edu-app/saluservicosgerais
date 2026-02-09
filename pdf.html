@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Orçamento - Salu Serviços Gerais</title>
+
+  <!-- CSS normal -->
+  <link rel="stylesheet" href="css/pdf.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet"><!-- assinatura -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet"><!--linha na assinatura-->
+
+
+
+</head>
+<body>
+
+<!-- ÁREA QUE VAI PARA O PDF -->
+<div id="area-pdf">
+
+  <!-- CABEÇALHO -->
+  <header class="cabecalho">
+    <img src="image/logo.png">
+    <h1>Salu Serviços Gerais</h1>
+    <h2>CNPJ 41.366.567/0001-63</h2>
+    <p>Desde 2002</p>
+    <p class="slogan">Construindo com qualidade e confiança</p>
+  </header>
+
+  <!-- INFO DO ORÇAMENTO -->
+  <section class="info">
+    <p><strong>Orçamento Nº:</strong> <span id="numeroOrcamento"></span></p>
+    <p><strong>Data:</strong> <span id="dataSolicitacao"></span></p>
+    <p><strong>Validade:</strong> <span id="validadeOrcamento"></span></p>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="previewServicos"></section>
+
+  <!-- TOTAL -->
+   <h3>Total do orçamento</h3>
+  <div id="resultado">
+
+  </div>
+ <br><br><br>
+   <button onclick="window.print()">Gerar PDF</button>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <p>📱 WhatsApp: (81) 98424-2796</p>
+    <p>📧 saluservicosgerais@gmail.com</p>
+  
+<div class="assinatura-medica">
+  <p>  Atenciosamente,</p>
+  <u>Eduardo Bandeira</u>
+  
+</div>
+<p class="cargo">Responsável </p>
+Salu Serviços Gerais
+Desde 2002
+
+  </footer>
+
+</div>
+
+
+<!-- JS -->
+<script src="js/pdf.js"></script>
+</body>
+</html>

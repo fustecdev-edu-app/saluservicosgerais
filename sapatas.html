@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-- Define que este documento é HTML5 -->
+<html lang="pt-BR">
+<!-- Define o idioma da página como português do Brasil -->
+
+<head>
+  <!-- Codificação de caracteres (evita erros com acentos) -->
+  <meta charset="UTF-8">
+
+  <!-- Faz a página se adaptar bem em celular, tablet e desktop -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Importa o CSS específico da página de sapatas -->
+  <link rel="stylesheet" href="css/sapatas.css">
+
+
+
+  <!-- Título que aparece na aba do navegador -->
+  <title>Sapatas</title>
+</head>
+
+<body>
+
+<!-- Container principal para centralizar e organizar o conteúdo -->
+<div class="container">
+
+  <!-- ===== INPUT: QUANTIDADE DE LAJES ===== -->
+  <!-- O usuário informa quantos pavimentos (lajes) a obra terá -->
+  <label>Quantidade de lajes</label>
+
+  <!-- 
+    type="number" → aceita apenas números
+    id="qtdLajes" → usado pelo JavaScript para ler o valor
+    min="1" → impede valores negativos ou zero
+  -->
+  <input type="number" id="qtdLajes" min="1" placeholder="Ex: 1">
+
+
+  <!-- ===== SELECT: TIPO DE SAPATA ===== -->
+  <!-- Este campo NÃO é preenchido pelo usuário -->
+  <!-- O JavaScript define automaticamente com base nas lajes -->
+  <label>Tipo de sapata (automático)</label>
+
+  <!-- 
+    disabled → impede edição manual
+    O JS altera o value automaticamente
+  -->
+  <select id="tipoSapata" disabled>
+    <option value="">Definido automaticamente</option>
+    <option value="0.60">0.60 x 0.60</option>
+    <option value="0.70">0.70 x 0.70</option>
+    <option value="1.00">1.00 x 1.00</option>
+    <option value="1.20">1.20 x 1.20</option>
+  </select>
+
+
+  <!-- ===== INPUT: QUANTIDADE DE SAPATAS ===== -->
+  <!-- Quantas sapatas existirão na obra -->
+  <label>Quantidade de sapatas</label>
+
+  <input 
+    type="number" 
+    id="qtdSapatas" 
+    min="1" 
+    placeholder="Ex: 12"
+  >
+
+
+  <!-- ===== INPUT: MÃO DE OBRA ===== -->
+  <!-- Valor cobrado por sapata executada -->
+  <label>Valor da mão de obra (R$ por sapata)</label>
+
+  <input 
+    type="number" 
+    id="valorMaoObra" 
+    placeholder="Ex: 120"
+  >
+
+
+  <!-- ===== BOTÃO: ADICIONAR AO ORÇAMENTO ===== -->
+  <!-- Chama a função JS que calcula e salva no localStorage -->
+  <button onclick="adicionarSapatas()">
+    Adicionar ao orçamento
+  </button>
+
+
+  <!-- ===== RESULTADO VISUAL ===== -->
+  <!-- Aqui o JS escreve o resumo do cálculo -->
+  <div id="resultado"></div>
+
+</div>
+
+<!-- Espaçamento visual -->
+<br><br><br>
+
+<!-- ===== BOTÃO: FINALIZAR ORÇAMENTO ===== -->
+<!-- Gera o PDF com todos os serviços -->
+<button onclick="finalizarOrcamento()">
+  Finalizar orçamento (PDF)
+</button>
+
+<br><br>
+
+<!-- ===== BOTÃO: CONTINUAR ===== -->
+<!-- Volta para a página de serviços -->
+<button onclick="continuarOrcamento()">
+  Continuar orçamento (outros serviços)
+</button>
+
+<br><br>
+
+<!-- ===== CARD DE ORÇAMENTO ===== -->
+<!-- Mostra quantos serviços já foram adicionados -->
+<!-- Abre o modal -->
+<div class="card-orcamento" onclick="abrirModal()">
+
+  <div class="card-info">
+    <span class="titulo">Serviços adicionados</span>
+
+    <!-- Contador atualizado pelo JS -->
+    <span id="contador" class="quantidade">0</span>
+  </div>
+
+  <!-- Ícone apenas visual -->
+  <div class="card-icone" data-tooltip="Ver serviços">
+    👁️
+  </div>
+</div>
+
+
+<!-- ===== MODAL ===== -->
+<!-- Fica oculto até o JS mudar display para block -->
+<div id="modal" class="modal">
+
+  <div class="modal-content">
+
+    <!-- Botão de fechar -->
+    <span class="fechar" onclick="fecharModal()">❌</span>
+
+    <h3>Serviços adicionados</h3>
+
+    <!-- Lista dinâmica preenchida pelo JS -->
+    <div id="listaServicos"></div>
+
+  </div>
+</div>
+
+
+<!-- ===== JAVASCRIPT ===== -->
+<!-- Script responsável pelos cálculos, modal e armazenamento -->
+ <script src="js/orcamento.js"></script>
+<script src="js/sapatas.js"></script>
+
+
+</body>
+</html>

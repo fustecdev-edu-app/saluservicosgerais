@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orçamento - Cerâmica</title>
+  <link rel="stylesheet" href="css/ceramica.css">
+
+
+  
+
+</head>
+<body>
+
+<h2>Assentamento de Cerâmica</h2>
+
+<label>
+  Área (m²):
+  <input type="number" id="area" placeholder="Ex: 20">
+</label>
+<br><br>
+
+<label>
+  Valor da mão de obra (R$/m²):
+  <input type="number" id="valorMaoObra" placeholder="Ex: 45">
+</label>
+<br><br>
+
+<button onclick="adicionarCeramica()">Adicionar ao orçamento</button>
+
+<hr>
+
+<div id="resultado"></div>
+
+<br>
+
+<button onclick="finalizarOrcamento()">Finalizar orçamento (PDF)</button>
+<br><br>
+
+<button onclick="continuarOrcamento()">Continuar orçamento (outros serviços)</button>
+
+<br><br>
+<div class="card-orcamento" onclick="abrirModal()">
+  <div class="card-info">
+    <span class="titulo">Serviços adicionados</span>
+    <span id="contador" class="quantidade">0</span>
+  </div>
+
+  <div class="card-icone" data-tooltip="Ver serviços">
+    👁️
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="fechar" onclick="fecharModal()">❌</span>
+    <h3>Serviços adicionados</h3>
+    <div id="listaServicos"></div>
+  </div>
+</div>
+
+<script src="js/orcamento.js"></script>
+<script src="js/ceramica.js"></script>
+</body>
+</html>

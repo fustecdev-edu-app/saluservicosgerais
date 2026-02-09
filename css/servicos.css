@@ -1,0 +1,174 @@
+/* ===============================
+   ESTILO GLOBAL DA PÁGINA
+   =============================== */
+
+/* Define a fonte padrão, remove margens do navegador
+   e aplica cores base do projeto */
+body {
+  font-family: 'Inter', sans-serif; /* Fonte moderna e legível */
+  margin: 0;                        /* Remove margens padrão do browser */
+  background-color: #f9f9f9;        /* Fundo claro para conforto visual */
+  color: #333;                      /* Cor padrão do texto */
+}
+
+
+/* ===============================
+   CABEÇALHO (HEADER)
+   =============================== */
+
+/* Container do topo da página */
+header {
+  background-color: #0077cc;        /* Azul principal do projeto */
+  color: #fff;                      /* Texto branco */
+  padding: 15px 20px;               /* Espaçamento interno */
+  display: flex;                    /* Layout flexível */
+  justify-content: space-between;   /* Logo à esquerda, menu à direita */
+  align-items: center;              /* Centraliza verticalmente */
+}
+
+/* Logo / título do sistema */
+header .logo h1 {
+  margin: 0;                        /* Remove margem padrão do h1 */
+  font-size: 1.5rem;                /* Tamanho equilibrado */
+}
+
+
+/* ===============================
+   MENU DE NAVEGAÇÃO
+   =============================== */
+
+/* Lista do menu */
+nav ul.menu {
+  list-style: none;                 /* Remove bolinhas da lista */
+  display: flex;                    /* Menu em linha */
+  gap: 20px;                        /* Espaço entre itens */
+  margin: 0;
+  padding: 0;
+}
+
+/* Links do menu */
+nav ul.menu li a {
+  color: #fff;                      /* Texto branco */
+  text-decoration: none;            /* Remove sublinhado */
+  font-weight: 500;                 /* Peso médio */
+  transition: color 0.2s ease;      /* Animação suave ao passar o mouse */
+}
+
+/* Hover e link ativo */
+nav ul.menu li a:hover,
+nav ul.menu li a.active {
+  color: #ffdd57;                   /* Amarelo para destaque */
+}
+
+
+/* ===============================
+   CONTEÚDO PRINCIPAL
+   =============================== */
+
+/* Área principal da página */
+main {
+  padding: 30px 20px;               /* Espaçamento interno */
+}
+
+/* Título da seção */
+.hero h2 {
+  font-size: 1.8rem;                /* Destaque visual */
+  margin-bottom: 10px;
+}
+
+/* Texto explicativo */
+.hero p {
+  margin-bottom: 25px;
+  color: #555;                      /* Cinza suave */
+}
+
+
+/* ===============================
+   GRID DE SERVIÇOS
+   =============================== */
+
+/* Container dos cards */
+.servicos-opcoes {
+  display: grid;                    
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(220px, 1fr)
+  );                                /* Grid responsivo automático */
+  gap: 20px;                        /* Espaço entre cards */
+}
+
+
+/* ===============================
+   CARD DE SERVIÇO
+   =============================== */
+
+/* Card clicável de cada serviço */
+.servico-card {
+  background-color: #fff;           /* Fundo branco */
+  padding: 20px;
+  border-radius: 12px;              /* Cantos arredondados */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra leve */
+  text-decoration: none;            /* Remove sublinhado do link */
+  color: inherit;                   /* Herda cor do texto */
+  display: flex;
+  flex-direction: column;           /* Conteúdo em coluna */
+  align-items: center;              /* Centraliza conteúdo */
+  transition: 
+    transform 0.2s ease,
+    box-shadow 0.2s ease;            /* Animações suaves */
+}
+
+/* Efeito ao passar o mouse */
+.servico-card:hover {
+  transform: translateY(-5px);      /* Eleva o card */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Sombra mais forte */
+}
+
+
+/* ===============================
+   ÍCONE DO CARD (opcional)
+   =============================== */
+
+/* Caso você queira adicionar ícones futuramente */
+.servico-card .card-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+/* Animação do ícone no hover */
+.servico-card:hover .card-icon {
+  transform: scale(1.2) rotate(10deg);
+}
+
+
+/* ===============================
+   TEXTO DO CARD
+   =============================== */
+
+/* Título do serviço */
+.servico-card h3 {
+  margin: 10px 0 5px 0;
+  font-size: 1.2rem;
+}
+
+/* Descrição do serviço */
+.servico-card p {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+
+/* ===============================
+   RODAPÉ
+   =============================== */
+
+footer {
+  background-color: #0077cc;        /* Mesma cor do header */
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}

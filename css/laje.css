@@ -1,0 +1,167 @@
+/* ===============================
+   SELECT TIPO DE SAPATA
+   =============================== */
+#tipoSapata {
+  pointer-events: none; /* Desativa qualquer interação do usuário (somente leitura) */
+  background-color: #f2f2f2; /* Cor de fundo clara indicando desativado */
+  color: #333; /* Cor do texto */
+}
+
+/* ===============================
+   RESULTADO DOS CÁLCULOS
+   =============================== */
+#resultado p {
+  background: #f7f7f7; /* Fundo levemente cinza para destacar cada item */
+  padding: 10px; /* Espaçamento interno */
+  border-left: 4px solid #444; /* Borda à esquerda para criar destaque visual */
+}
+
+/* ===============================
+   CARD DE ORÇAMENTO
+   =============================== */
+.card-orcamento {
+  display: flex; /* Alinha conteúdo horizontalmente */
+  justify-content: space-between; /* Espaça título e ícone nas extremidades */
+  align-items: center; /* Alinha verticalmente ao centro */
+  max-width: 320px; /* Limita a largura máxima do card */
+  padding: 15px 20px; /* Espaçamento interno */
+  border-radius: 12px; /* Cantos arredondados */
+  background: #f8f9fa; /* Fundo claro */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra suave */
+  cursor: pointer; /* Muda o cursor ao passar por cima */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animação suave para hover */
+  margin-top: 10px; /* Espaço acima do card */
+}
+
+/* Efeito hover no card */
+.card-orcamento:hover {
+  transform: translateY(-2px); /* Leve elevação visual */
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15); /* Sombra mais intensa */
+}
+
+/* ===============================
+   INFORMAÇÕES DENTRO DO CARD
+   =============================== */
+.card-info {
+  display: flex;
+  flex-direction: column; /* Coloca título e quantidade em coluna */
+}
+
+/* Título "Serviços adicionados" */
+.card-info .titulo {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Quantidade de serviços adicionados */
+.card-info .quantidade {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ===============================
+   ÍCONE DO OLHO
+   =============================== */
+.card-icone {
+  font-size: 26px; /* Tamanho do ícone */
+  position: relative; /* Necessário para posicionar tooltip */
+  animation: piscar 3s infinite; /* Animação de "piscar" o olho */
+}
+
+/* ===============================
+   ANIMAÇÃO DO OLHO PISCANDO
+   =============================== */
+@keyframes piscar {
+  0%, 90%, 100% { opacity: 1; } /* Totalmente visível */
+  92%, 96% { opacity: 0.3; } /* Pisca (fica transparente momentaneamente) */
+}
+
+/* ===============================
+   TOOLTIP DO OLHO
+   =============================== */
+.card-icone::after {
+  content: attr(data-tooltip); /* Pega o texto do atributo data-tooltip */
+  position: absolute; /* Posiciona relativo ao ícone */
+  bottom: 120%; /* Acima do ícone */
+  right: 50%; /* Centralizado horizontalmente */
+  transform: translateX(50%); /* Ajusta para centralizar exato */
+  background: #333; /* Fundo escuro */
+  color: #fff; /* Texto branco */
+  padding: 6px 8px; /* Espaçamento interno da tooltip */
+  font-size: 12px; /* Tamanho da fonte */
+  border-radius: 6px; /* Cantos arredondados */
+  white-space: nowrap; /* Evita quebra de linha */
+  opacity: 0; /* Inicialmente invisível */
+  pointer-events: none; /* Não atrapalha o mouse */
+  transition: opacity 0.2s ease; /* Transição suave de aparição */
+}
+
+/* Triângulo da tooltip */
+.card-icone::before {
+  content: "";
+  position: absolute;
+  bottom: 110%; /* Posiciona ligeiramente acima do ícone */
+  right: 50%; 
+  transform: translateX(50%);
+  border-width: 6px; /* Tamanho do triângulo */
+  border-style: solid;
+  border-color: #333 transparent transparent transparent; /* Triângulo apontando para baixo */
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Tooltip aparece quando passar o mouse no ícone */
+.card-icone:hover::after,
+.card-icone:hover::before {
+  opacity: 1;
+}
+
+/* ===============================
+   MODAL (TELA ESCURA)
+   =============================== */
+.modal {
+  display: none; /* Inicialmente escondido */
+  position: fixed; /* Fixa na tela inteira */
+  z-index: 999; /* Sobre todos os elementos */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* Fundo semitransparente */
+}
+
+/* ===============================
+   CONTEÚDO DO MODAL
+   =============================== */
+.modal-content {
+  background: #fff; /* Fundo branco */
+  margin: 10% auto; /* Centralizado verticalmente e horizontalmente */
+  padding: 20px;
+  width: 90%; /* Ocupa quase toda a tela */
+  max-width: 500px; /* Limite de largura */
+  border-radius: 8px; /* Cantos arredondados */
+  max-height: 70%; /* Altura máxima para scroll */
+  overflow-y: auto; /* Permite scroll vertical se necessário */
+}
+
+/* BOTÃO DE FECHAR MODAL */
+.fechar {
+  float: right; /* Alinha o X à direita */
+  font-size: 24px;
+  cursor: pointer; /* Muda cursor ao passar o mouse */
+}
+/* BOTÕES */
+button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #0056b3;
+}
